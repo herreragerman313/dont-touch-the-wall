@@ -18,25 +18,25 @@ const LEVELS = [
   { name: "Watch Out", width: 60,
     path: [[60, 470], [60, 90], [300, 90], [300, 470], [560, 470], [560, 90], [840, 90]],
     enemies: [{ speed: 90, offset: 0.5 }] },
-  { name: "Squeeze", width: 48,
+  { name: "Squeeze", width: 52,
     path: [[60, 90], [250, 90], [250, 250], [100, 250], [100, 470], [500, 470],
            [500, 180], [680, 180], [680, 400], [840, 400]],
-    enemies: [{ speed: 110, offset: 0.3 }, { speed: 110, offset: 0.8 }] },
-  { name: "Rush Hour", width: 40,
+    enemies: [{ speed: 95, offset: 0.3 }, { speed: 95, offset: 0.8 }] },
+  { name: "Rush Hour", width: 48,
     path: [[60, 500], [840, 500], [840, 380], [120, 380], [120, 260], [840, 260],
            [840, 140], [60, 140], [60, 60], [840, 60]],
-    enemies: [{ speed: 150, offset: 0.25 }, { speed: 150, offset: 0.5 }, { speed: 150, offset: 0.75 }] },
-  { name: "Lights Out", width: 40, dark: true,
+    enemies: [{ speed: 110, offset: 0.35 }, { speed: 110, offset: 0.75 }] },
+  { name: "Lights Out", width: 46, dark: true,
     path: [[60, 280], [200, 280], [200, 80], [380, 80], [380, 480], [560, 480],
            [560, 80], [740, 80], [740, 280], [840, 280]] },
-  { name: "Final Boss", width: 32, dark: true,
+  { name: "Final Boss", width: 42, dark: true,
     path: [[60, 60], [840, 60], [840, 180], [60, 180], [60, 300], [840, 300],
            [840, 420], [60, 420], [60, 510], [840, 510]],
-    enemies: [{ speed: 120, offset: 0.4 }, { speed: 120, offset: 0.8 }] }
+    enemies: [{ speed: 85, offset: 0.4 }, { speed: 85, offset: 0.8 }] }
 ];
 
-const ENEMY_RADIUS = 10;
-const LIGHT_RADIUS = 85;
+const ENEMY_RADIUS = 9;
+const LIGHT_RADIUS = 100;
 
 // Game state
 let levelIndex = 0;
@@ -376,7 +376,7 @@ function loop(now) {
   if (state === "playing") {
     const timeSec = (now - levelStartTime) / 1000;
     const hit = enemyPositions(timeSec).some(e =>
-      Math.hypot(e.x - mouse.x, e.y - mouse.y) <= ENEMY_RADIUS + 4);
+      Math.hypot(e.x - mouse.x, e.y - mouse.y) <= ENEMY_RADIUS + 2);
     if (hit) die("A red dot got you!");
   }
 

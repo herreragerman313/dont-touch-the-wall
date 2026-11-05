@@ -2,7 +2,7 @@
 
 A browser game built for CIT 384 (Web Development with Hosting) at CSUN. You trace a path with your mouse from the start to the goal. Touch the wall and you restart the level. There are 8 levels, and each one gets harder.
 
-**Live demo:** `http://YOUR_SERVER_IP/game/` (replace with your link)
+**Play it here:** https://herreragerman313.github.io/dont-touch-the-wall/
 
 ## How to Play
 
@@ -36,8 +36,8 @@ A browser game built for CIT 384 (Web Development with Hosting) at CSUN. You tra
 | Structure | HTML5 |
 | Styling | CSS3 |
 | Game logic and drawing | JavaScript (Canvas API, Web Audio API) |
-| Web server | Apache on Linux |
-| Deployment | SSH and Git |
+| Hosting | GitHub Pages (HTTPS) |
+| Version control | Git and GitHub |
 
 ## Project Structure
 
@@ -51,20 +51,9 @@ dont-touch-the-wall/
 
 ## Deployment
 
-The game is hosted on a Linux server running Apache. It was deployed over SSH by cloning this repo into the web folder:
+The game is a static site, so it needs no backend or database. It is hosted for free with GitHub Pages straight from the `main` branch of this repo. Every time a change is pushed to `main`, GitHub rebuilds the site automatically, and it is served over HTTPS.
 
-```
-ssh -i yourkey.pem ubuntu@YOUR_SERVER_IP
-sudo apt update && sudo apt install git apache2 -y
-cd /var/www/html
-sudo git clone https://github.com/herreragerman313/dont-touch-the-wall.git game
-```
-
-To update the live site after pushing changes:
-
-```
-cd /var/www/html/game && sudo git pull
-```
+Since it is just HTML, CSS, and JavaScript, the same files can also run on any web server like Apache. Copy them into the web folder (for example `/var/www/html/game/`) over SSH.
 
 ## Security Notes
 
@@ -75,13 +64,13 @@ cd /var/www/html/game && sudo git pull
 
 ## What I Learned
 
-* Hosting a static site on Apache and deploying it over SSH
-* Using Git to move code from my laptop to a live server
+* Hosting a static site with GitHub Pages and keeping it updated through Git
+* How a static site can run on any web server, like Apache, without a backend
 * Collision detection using distance from a point to a line segment
 * Building a game loop and handling game states (ready, playing, dead, cleared, finished)
 * Keeping HTML, CSS, and JavaScript in separate files
 
 ## Author
 
-**German Herrera**, Computer Information Technology, CSUN
+**German Herrera**, Computer Information Technology, CSUN  
 GitHub: [herreragerman313](https://github.com/herreragerman313)
