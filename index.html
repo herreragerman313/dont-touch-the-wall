@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Don't Touch the Wall</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Don't Touch the Wall</h1>
+    <p class="tagline">Trace the blue path from the green dot to the gold goal. Touch the black and you start over.</p>
+  </header>
+
+  <section class="hud">
+    <div><span class="label">Level</span><span id="levelNum">1</span>/<span id="levelTotal">8</span></div>
+    <div><span class="label">Stage</span><span id="levelName">Warm Up</span></div>
+    <div><span class="label">Deaths</span><span id="deaths">0</span></div>
+    <div><span class="label">Time</span><span id="timer">0.0</span>s</div>
+    <div><span class="label">Best</span><span id="best">--</span></div>
+  </section>
+
+  <main>
+    <canvas id="game" width="900" height="560"></canvas>
+  </main>
+
+  <section class="rules">
+    <h2>How to play</h2>
+    <ul>
+      <li>Click the green dot to start a level.</li>
+      <li>Move your mouse along the blue path to the gold goal.</li>
+      <li>Touching the black area, leaving the board, or getting hit by a red dot sends you back to the start of the level.</li>
+      <li>Every level the path gets thinner. Red dots show up on level 4.</li>
+      <li>Levels 7 and 8 are "Lights Out": you can see the map before you click start, then the lights go off and you only see around your cursor.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>CIT 384 Lab Project by German</p>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>

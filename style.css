@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  background: #05050c;
+  color: #e8e8f0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  text-align: center;
+}
+
+header h1 {
+  margin: 8px 0 4px;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  color: #3d5afe;
+  text-shadow: 0 0 12px rgba(61, 90, 254, 0.7);
+}
+
+.tagline {
+  margin: 0 0 16px;
+  color: #a0a0b8;
+}
+
+.hud {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.hud div {
+  background: #12122a;
+  border: 1px solid #2a2a55;
+  border-radius: 8px;
+  padding: 8px 14px;
+  min-width: 110px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.hud .label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: normal;
+  color: #8888aa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+#game {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border: 3px solid #2a2a55;
+  border-radius: 10px;
+  background: #000;
+  touch-action: none;
+}
+
+#game.playing {
+  cursor: none;
+}
+
+.rules {
+  max-width: 700px;
+  margin: 20px auto;
+  text-align: left;
+  background: #0d0d1f;
+  border: 1px solid #2a2a55;
+  border-radius: 10px;
+  padding: 12px 24px;
+}
+
+.rules h2 {
+  color: #ffd54f;
+  margin-top: 8px;
+}
+
+.rules li {
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+footer {
+  color: #666680;
+  font-size: 0.85rem;
+}
